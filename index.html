@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel = 'stylesheet' href="style.css">
+    <script src="https://kit.fontawesome.com/602a7a70a0.js" crossorigin="anonymous"></script>
+</head>
+<div>
+    <div class="container">
+        <nav>
+            <img src="images/logo black.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contacts</a></li>
+                <i class="fa-sharp fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-sharp fa-solid fa-caret-down" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Aspiring Data Scientist</p>
+            <h1>Hi, I'm <span>Arpit Vaksh</span><br>from India</h1>
+        </div>
+
+
+        <!-- <----------------skill sphere----------------> 
+            <div class="skill sphere">
+        <span class="Sphere"></span>
+        
+        <!-- Including the TagCloud.js script CDN in the document    -->
+        <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
+        <script>
+            const Texts = [
+                'HTML', 'CSS', 'JAVASCRIPT', 'MACHINE LEARNING',
+                'REACT','PYTHON', 'DATA VISUALIZATION',
+                'NODEJS', 'MONGODB', 'DEEP LEARNING',
+                'EXPRESS', 'MYSQL', 'DATA ANALYTICS',
+            ];
+
+            var tagCloud = TagCloud('.Sphere', Texts, {
+
+                // Sphere radius in px
+                radius: 230,
+
+                // animation speed
+                // slow, normal, fast
+                maxSpeed: 'normal',
+                initSpeed: 'fast',
+
+                // Rolling direction [0 (top) , 90 (left), 135 (right-bottom)] 
+                direction: 135,
+
+                // interaction with mouse or not [Default true (decelerate to rolling init speed, and keep rolling with mouse).]
+                keep: true
+
+            });
+
+            // Giving color to each text in sphere
+            var color = '#0999f2';
+            document.querySelector('.Sphere').style.color = color;
+        </script>
+    </div>
+</div>
+
+
+
+
+<!-- -----------------------------about------------------------ -->
+<div id = "about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello and welcome to my portfolio website! My name is Arpit Vaksh and I am a student pursuing B.tech in computer
+                science and engineering with a specialization in Data Science from ABES Engineering College. My passion for technology
+                and Data Science has driven me towards my goal of becoming a skilled professional in the field. I have a keen interest
+                in Data Science and Web Development and I am constantly working towards improving my skills and knowledge in these
+                areas. On this website, you'll find some of my projects that showcase my abilities and my journey towards a successful
+                career in technology. Thank you for visiting my portfolio!</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                    <p class="tab-links" onclick="opentab('certification')">Certification</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br> Python, C, JS</li>
+                        <li><span>Data Science</span><br> Data Analysis and Visualization</li>
+                        <li><span>Web Development</span><br> Website and WebApp Development</li>
+                        <li><span>Problem Solving</span><br> Solving Complex Problems using Code</li>
+                        <li><span>SQL</span><br>MySQL</li>
+                        <li><span>UI/UX</span><br> Designing Web/App interfaces</li>
+                    </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2024</span><br>Computer Science and Engineering (Data Science)<br>ABES Engineering College, Ghaziabad</li>
+                            <li><span>2020</span><br> Senior Secondary(12th)-CBSE with 90% <br>Himalaya Public Sr. Sec School, New Delhi</li>
+                            <li><span>2018</span><br> Secondary(10th)-ICSE with 74% <br>Seventh Day Adventist Inter College, Roorkee</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="certification">
+                        <ul>
+                            <li><span>ABESEC</span><br>Data Science and Machine Learning <br> Mern Training</li>
+                            <li><span>CISCO</span><br> Programming Essentials in Python <br> Cyber Security Essentials</li>
+                            <li><span>HackerRank</span><br> SQL Basic <br> SQL Intermediate</li>
+                            <li><span>Great Learning</span><br>Big Data Analytics</li>
+                            <li><span>Analytics Vidhya</span><br>Introduction to NLP</li>
+                            <li><span>Elements of AI</span><br>Introduction to AI</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>Real Time Reviews Sentiment Analysis</span><br>Technology: Machine Learning, NLP <br>Description: It is the NLP based project
+                                that performs sentiment analysis on the reviews of the customer and the output is given in the form of
+                                WebApp using the flask </li>
+                            <li><span>Desktop Assistant</span><br>Technology: Python <br>Description: Embedded Automatic Speech Recognition, Artificial Intelligence, Natural Language Processing, and Inter-Process
+                            Communication, using Python.</li>
+                            <li><span>Student Dashboard- Central Repository of skills</span><br>Technology: HTML, CSS, JS, UI/UX<br>Description: Created a responsive website with various attractive features using CSS properties. It includes the details provided by
+                            the students like skill set, certification, and other required information, which is used by the mentors.</li>
+                    
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>DataVerse | Founder & Vice President</span><br> Nov 2022 - Present<br>Description: Brings together individuals with a passion for exploring, analyzing, and interpreting data to solve complex problems
+                            through collaborative learning, DataVerse is committed to fostering the growth and development of the next generation of
+                            data scientists</li>
+                            
+                            <li><span>Glorious Insight Pvt. Ltd. | Technical Associate (Intern)</span><br> July 2021 - Sep 2021<br>Description: Internship in the field of Data Annotation and Supported the
+                            Research and Development Team in improving the accuracy and quality of
+                            deep learning models to achieve excellent performance in projects and
+                            competitions by using in-house tools to accurately annotate and label data.</li>
+                            
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <!-- ---------------------------------project-------------------------- -->
+                
+                    <div id="Projects">
+                        <div class="container">
+                            <h1 class="sub-title">My Projects</h1>
+                            <div class="project-list">
+                                <div>
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                    <h2>Real Time Review Sentiment Analysis</h2>
+                                    <p>This project extracts real-time reviews for a product from flipkart.com using webscrapping and gives suggestions about the product using
+                                        Natural Language Processing that classifies the reviews as Position, Neutral and Negative.</p>
+                                    <a href="https://github.com/Arpit-Vaksh/flipkart-sentiment-analysis-project"><i class="fa-sharp fa-solid fa-link"></i></i></a>
+                                
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-desktop"></i>
+                                    <h2>Desktop Assistant</h2>
+                                    <p>A desktop assistant project built using Python is a program designed to provide assistance to users in performing
+                                    various tasks on their computer. The assistant can be programmed to recognize specific voice commands, respond to user
+                                    input, and perform actions based on those commands.</p>
+                                    <a href="https://github.com/Arpit-Vaksh/Python-Projects"><i class="fa-sharp fa-solid fa-link"></i></i></a>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                    <h2>Student Dashboard- Central Repository of skills</h2>
+                                    <p>Created a responsive website with various attractive features using CSS properties. It includes the details provided by
+                                    the students like skill set, certification, and other required information, which is used by the mentors.</p>
+                                    <h6>Source code Private</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Many more to come</h2>
+                    <!-- ----------------------------------services----------------------------->
+                    <div id="services">
+                        <div class="container">
+                            <h1 class="sub-title">My Services</h1>
+                            <div class="services-list">
+                                <div>
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    <h2>Graphic Design</h2>
+                                    <p>I create awesome graphics content like social media posts, thumbnils, templates, resumes, etc for you or your business on Canva that would catch eyes of your audience.</p>
+                                    <a href="#">Learn more</a>
+                        
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-code"></i>
+                                    <h2>Web Development</h2>
+                                    <p>I create awesome responsive Website like personal portfolio, company/business website, ecommerce website, etc for you or
+                                        your business that would catch eyes of your audience.</p>
+                                    <a href="#">Learn more</a>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                    <h2>Analysis</h2>
+                                    <p>I perform analysis on your data to give insights about whatever you need like customer, sales, stock, progress, etc for you or
+                                        your business that helps to take better decisions for future growth</p>
+                                    <a href="#">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    
+
+                    <!-------------------------------------contact--------------------------- -->
+                    
+                    <div id="contact">
+                        <div class="container">
+                            <div class="row">
+                                <div class="contact-left">
+                                    <h1 class="sub-title">Contact Me</h1>
+                                    <p><i class="fa-solid fa-paper-plane"></i>arpitvaksh.com</p>
+                                    <p><i class="fa-solid fa-phone"></i>+91 9045122928</p>
+                                    <div class="social-icons">
+                                        <a href="https://www.linkedin.com/in/arpit-vaksh/"><i class="fa-brands fa-linkedin"></i></a>
+                                        <a href="https://github.com/Arpit-Vaksh"><i class="fa-brands fa-github"></i></a>
+                                        <a href="https://www.instagram.com/arpit_vkx/"><i class="fa-brands fa-instagram"></i></a>
+                                    </div>
+                                    <a href="https://drive.google.com/file/d/1QSirj-gVBjkqHpW2X-7o7gx1SdAxZkqV/view?usp=sharing" class="btn btn2">Download Resume</a>
+                                </div>
+                    
+                                <div class="contact-right">
+                                    <form name="submit-to-google-sheet">
+                                        <input type="text" name="Name" placeholder="Your Name" required>
+                                        <input type="email" name="Email" placeholder="Email" required>
+                                        <textarea name="Message" id="" rows="6" placeholder="Your Message"></textarea>
+                                        <button type="submit" class="btn btn2">Submit</button>
+                                    </form>
+                                        <span id="msg"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <p><i class="fa-regular fa-copyright"></i>Copyright Arpit Vaksh</p>
+                        </div>
+                    </div>
+                    <script>
+                        var tablinks = document.getElementsByClassName("tab-links");
+                        var tabcontents = document.getElementsByClassName("tab-contents");
+                        function opentab(tabname) {
+                            for (tablink of tablinks) {
+                                tablink.classList.remove("active-link");
+                            }
+                            for (tabcontent of tabcontents) {
+                                tabcontent.classList.remove("active-tab");
+                            }
+                            event.currentTarget.classList.add("active-link");
+                            document.getElementById(tabname).classList.add("active-tab");
+                        }
+                    </script>
+                    <script>
+                        var sidemenu = document.getElementById("sidemenu");
+
+                        function openmenu() {
+                            sidemenu.style.right = "0";
+                        }
+                        function closemenu() {
+                            sidemenu.style.right = "-200px";
+                        }
+                    </script>
+                    
+                    <script>
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbyryqhG6l7oMI6CHWGNlPt5O-Xt1ln6eS8NYWdfOxjnBMYPeNa5PyvJ8CE8DqhkHQlh/exec'
+                        const form = document.forms['submit-to-google-sheet']
+
+                        form.addEventListener('submit', e => {
+                            e.preventDefault()
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .then(response => console.log('Success!', response))
+                                .catch(error => console.error('Error!', error.message))
+                        })
+                    </script>
+                    </body>
+                    
+                    </html>
