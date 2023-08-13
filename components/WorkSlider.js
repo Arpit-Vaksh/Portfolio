@@ -1,43 +1,70 @@
+// next Image
+import Image from 'next/image'
+
+// swiper
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+// swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+
+// required modules
+import {Pagination } from 'swiper';
+
+// icons
+import { BsArrowRight } from 'react-icons/bs';
+import Link from 'next/link';
+
 // data
 const workSlides = {
   slides: [
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'Air Quality Analysis',
+          path: '/Thumb 1.png',
+          link: 'https://github.com/Arpit-Vaksh/Data-Science-Projects/blob/main/Air%20Quality%20Analysis%20(Regression).ipynb',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Star Wars Product Page',
+          path: '/Thumb 2.png',
+          link: 'https://arpit-vaksh.github.io/Star-Wars-Product-Page/',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'To Do List',
+          path: '/Thumb 3.png',
+          link: 'https://arpit-vaksh.github.io/CodeClause_project_ToDoList/',
         },
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Sentiment Analysis',
+          path: '/Thumb 4.png',
+          link: 'https://github.com/Arpit-Vaksh/Data-Science-Projects/tree/main/flipkartsentimentanalysis',
         },
       ],
     },
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Sentiment Analysis',
+          path: '/Thumb 4.png',
+          link: 'https://github.com/Arpit-Vaksh/Data-Science-Projects/tree/main/flipkartsentimentanalysis',
         },
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'DS and ML Projects',
+          path: '/Thumb 5.png',
+          link: 'https://github.com/Arpit-Vaksh/Data-Science-Projects',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Air Quality Analysis',
+          path: '/Thumb 1.png',
+          link: 'https://github.com/Arpit-Vaksh/Data-Science-Projects/blob/main/Air%20Quality%20Analysis%20(Regression).ipynb',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Star Wars Product Page',
+          path: '/Thumb 2.png',
+          link: 'https://arpit-vaksh.github.io/Star-Wars-Product-Page/',
         },
       ],
     },
@@ -45,7 +72,60 @@ const workSlides = {
 };
 
 const WorkSlider = () => {
-  return <div>Work Slider</div>;
-};
+  return (
+    <Swiper
+    spaceBetween={10}
+    pagination={{
+      clickable: true,
+    }}
+    modules={[Pagination]}
+    className='h-[280px] sm:h-[480px]'
+    >
+      {workSlides.slides.map((slide,index) => {
+        return (
+          <SwiperSlide key={index}>
+            <div className='grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer'>
+              {slide.images.map((image, index)=> {
+                return (
+                  // eslint-disable-next-line react/jsx-key
+                  <div className='relative rounded-lg overflow-hidden flex items-center justify-center group ' key={index}>
+                    <div className='flex items-center justify-center relative overflow-hidden group'>
+                      {/* image */}
+                      <Image src={image.path} width={400} height={300} alt='' />
+                      {/* overlay gradient */}
+                      <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700'></div>
+                      {/* title */}
+                      <div className='absolute bottom-0 translate-y-full group-hover:translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300'>
+                        <Link href={image.link}>
+                        <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2rem]'>
+                          {/* title part 1 */}
+                          <div className='delay-100'>
+                            View
+                          </div>
+                          {/* title part 2 */}
+                          <div className='translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
+                            Project
+                          </div>
+                          {/* icons */}
+                          <div className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200'>
+                            <BsArrowRight/>
+                          </div>
+
+                        </div>
+                      </Link>
+
+                      </div>
+                    </div>
+                  </div>
+
+                )
+              })}
+            </div>
+          </SwiperSlide>
+        )
+      })}
+    </Swiper>
+  )
+}
 
 export default WorkSlider;
